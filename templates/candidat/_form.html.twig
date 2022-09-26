@@ -1,0 +1,89 @@
+
+  {{ form_start(form) }}
+                    <div class="form-group">
+                       {{ form_label(form.numero) }}
+                        {{ form_widget(form.numero, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.numero, {'attr':{'class':'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.matPolice, 'Matricule Police' ) }}
+                        {{ form_widget(form.matPolice, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.matPolice) }}
+                    </div>
+                     <div class="form-group">
+                        {{ form_label(form.matSolde, 'Matricule Sole' ) }}
+                        {{ form_widget(form.matSolde, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.matSolde) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.nomPrenom, 'Noms et prénoms' ) }}
+                        {{ form_widget(form.nomPrenom, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.nomPrenom) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.grade) }}
+                        {{ form_widget(form.grade, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.grade) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.sexe) }}
+                        {{ form_widget(form.sexe, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.sexe) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.dateNaissance, 'Date de naissance' ) }}
+                        {{ form_widget(form.dateNaissance, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.dateNaissance) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.lieuNaissance, 'Lieu de naissance' ) }}
+                        {{ form_widget(form.lieuNaissance, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.lieuNaissance) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.age, 'Âge' ) }}
+                        {{ form_widget(form.age, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.age) }}
+                    </div>
+                     <div class="form-group">
+                       {{ form_label(form.dateRecrutement, 'Date de recrutement | intégrationet N° de l\'acte' ) }}
+                        {{ form_widget(form.dateRecrutement, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.dateRecrutement) }}
+                    </div>
+                     <div class="form-group">
+                       {{ form_label(form.dateDernierePromo, 'Date de dernière promotion et N° de l\'acte' ) }}
+                        {{ form_widget(form.dateDernierePromo, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.dateDernierePromo) }}
+                    </div>
+                     <div class="form-group">
+                       {{ form_label(form.dateDernierAvancement, 'Date de dernièr avancement D\'Ech et N° de l\'acte' ) }}
+                        {{ form_widget(form.dateDernierAvancement, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.dateDernierAvancement) }}
+                    </div>
+                     <div class="form-group">
+                       {{ form_label(form.anneeRestant, 'Date restant dans le corps' ) }}
+                        {{ form_widget(form.anneeRestant, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.anneeRestant) }}
+                    </div> 
+                    <div class="form-group">
+                       {{ form_label(form.dateDepart, 'Date de départ retraite' ) }}
+                        {{ form_widget(form.dateDepart, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.dateDepart) }}
+                    </div>
+                     <div class="form-group">
+                       {{ form_label(form.fonction, 'Fonction / service' ) }}
+                        {{ form_widget(form.fonction, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.fonction) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.contacts, 'Contacts' ) }}
+                        {{ form_widget(form.contacts, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.contacts) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.pieceJointe, 'Pièces Jointes' ) }}
+                        {{ form_widget(form.pieceJointe, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.pieceJointe) }}
+                    </div>
+                    <button class="btn" style="background-color:grey-ligth">{{ button_label|default('Enregistrer') }}</button>
+                  {{ form_end(form) }}

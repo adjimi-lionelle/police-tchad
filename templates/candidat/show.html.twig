@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidat{% endblock %}
+
+{% block body %}
+    <h1>Candidat</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ candidat.id }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ candidat.numero }}</td>
+            </tr>
+            <tr>
+                <th>MatPolice</th>
+                <td>{{ candidat.matPolice }}</td>
+            </tr>
+            <tr>
+                <th>MatSolde</th>
+                <td>{{ candidat.matSolde }}</td>
+            </tr>
+            <tr>
+                <th>NomPrenom</th>
+                <td>{{ candidat.nomPrenom }}</td>
+            </tr>
+            <tr>
+                <th>Grade</th>
+                <td>{{ candidat.grade }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ candidat.sexe }}</td>
+            </tr>
+            <tr>
+                <th>DateNaissance</th>
+                <td>{{ candidat.dateNaissance ? candidat.dateNaissance|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>LieuNaissance</th>
+                <td>{{ candidat.lieuNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ candidat.age }}</td>
+            </tr>
+            <tr>
+                <th>DateRecrutement</th>
+                <td>{{ candidat.dateRecrutement }}</td>
+            </tr>
+            <tr>
+                <th>DateDernierePromo</th>
+                <td>{{ candidat.dateDernierePromo }}</td>
+            </tr>
+            <tr>
+                <th>DateDernierAvancement</th>
+                <td>{{ candidat.dateDernierAvancement }}</td>
+            </tr>
+            <tr>
+                <th>AnneeRestant</th>
+                <td>{{ candidat.anneeRestant }}</td>
+            </tr>
+            <tr>
+                <th>DateDepart</th>
+                <td>{{ candidat.dateDepart ? candidat.dateDepart|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Fonction</th>
+                <td>{{ candidat.fonction }}</td>
+            </tr>
+            <tr>
+                <th>Contacts</th>
+                <td>{{ candidat.contacts }}</td>
+            </tr>
+            <tr>
+                <th>PieceJointe</th>
+                <td>{{ candidat.pieceJointe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_candidat_index') }}">back to list</a>
+
+    <a href="{{ path('app_candidat_edit', {'id': candidat.id}) }}">edit</a>
+
+    {{ include('candidat/_delete_form.html.twig') }}
+{% endblock %}

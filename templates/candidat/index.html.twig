@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste | Candidats{% endblock %}
+       {% block body %}
+        <div class="content-wrapper">
+          <div class="row">
+            
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title" style="margin-left:35%">Liste des candidats</h4>
+                <div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="Recherche">
+</div>
+<span class="counter pull-right"></span>
+                  <div class="table-responsive">
+                    <table class="table table-hover table-bordered results" id="dtBasicExample">
+                      <thead>
+                        <tr>
+                          <th>Id</th>
+                          <th>Numero</th>
+                          <th>MatPolice</th>
+                          <th>MatSolde</th>
+                          <th>NomPrenom</th>
+                          <th>Grade</th>
+                          <th>Sexe</th>
+                          <th>DateNaissance</th>
+                          <th>LieuNaissance</th>
+                          <th>Age</th>
+                          <th>DateRecrutement</th>
+                          <th>DateDernierePromo</th>
+                          <th>DateDernierAvancement</th>
+                          <th>AnneeRestant</th>
+                          <th>DateDepart</th>
+                          <th>Fonction</th>
+                          <th>Contacts</th>
+                          <th>PieceJointe</th>
+                          <th>actions</th>
+                         
+                        </tr>
+                        <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> aucun résultat</td>
+    </tr>
+                      </thead>
+                      <tbody>
+                        {% for candidat in candidats %}
+                        <tr>
+                            <td>{{ candidat.id }}</td>
+                <td>{{ candidat.numero }}</td>
+                <td>{{ candidat.matPolice }}</td>
+                <td>{{ candidat.matSolde }}</td>
+                <td>{{ candidat.nomPrenom }}</td>
+                <td>{{ candidat.grade }}</td>
+                <td>{{ candidat.sexe }}</td>
+                <td>{{ candidat.dateNaissance ? candidat.dateNaissance|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ candidat.lieuNaissance }}</td>
+                <td>{{ candidat.age }}</td>
+                <td>{{ candidat.dateRecrutement }}</td>
+                <td>{{ candidat.dateDernierePromo }}</td>
+                <td>{{ candidat.dateDernierAvancement }}</td>
+                <td>{{ candidat.anneeRestant }}</td>
+                <td>{{ candidat.dateDepart ? candidat.dateDepart|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ candidat.fonction }}</td>
+                <td>{{ candidat.contacts }}</td>
+                <td>{{ candidat.pieceJointe }}</td>
+                <td>
+                     <a href="{{ path('app_candidat_show', {'id': candidat.id}) }}" class="btn btn-success btn-rounded btn-icon">
+                        <i class="typcn typcn-th-menu" style="color:white;margin-top:40px"></i>
+                      </a>
+                     <a href="{{ path('app_candidat_edit', {'id': candidat.id}) }}" class="btn btn-warning btn-rounded btn-icon">
+                        <i class="typcn typcn-edit"></i>
+                      </a>
+                      <a href="{{ path('app_candidat_delete', {'id': candidat.id}) }}" class="btn btn-danger btn-rounded btn-icon">
+                        <i class="typcn typcn-trash"></i>
+                      </a>
+                </td>
+                        </tr>
+                         {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+           
+          </div>
+        </div>
+        {% endblock %}

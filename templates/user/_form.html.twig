@@ -1,0 +1,15 @@
+
+
+  {{ form_start(form) }}
+                    <div class="form-group">
+                       {{ form_label(form.email, 'Adresse e-mail') }}
+                        {{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.email, {'attr':{'class':'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_label(form.telephone, 'Télépone' ) }}
+                        {{ form_widget(form.telephone, {'attr':{'class':'form-control'}}) }}
+                         {{ form_errors(form.telephone) }}
+                    </div>
+                  
+                  {{ form_end(form) }}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrer | Utilisateurs{% endblock %}
+{% block body %}
+        <div class="content-wrapper">
+            <div class="row">
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="margin-left:35%">Enregistrement d'un utilisateur</h4>
+                                
+                                {{ include('user/_form.html.twig') }}
+                            </div>
+                        </div>
+                    </div>
+            </div>
+       </div>
+       {% endblock %}
